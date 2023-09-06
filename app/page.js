@@ -1,60 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import Banner from "./Component/Banner";
 import buyImage from "../assets/images/buy.jpg";
 
-export default function Home() {
-  return (
-    <>
-      <div className="bannerContainer bg-red-200 ">
-        <div className="bannerWrapper bg-blue-300 w-[70%] m-auto py-4 sm:py-8 flex justify-between items-center  flex-col sm:flex-row ">
-          {/* left side of banner  */}
+const Home = () => (
+  <>
+    <Banner
+      imageUrl={buyImage}
+      purpose="RENT A HOME"
+      title="  Rental Homes in Affordable Prices"
+      description="Explore apartments, villas and more and more"
+      buttonText="Explore Renting "
+      linkName="/search?purpose-for-rent"
+    />
+  </>
+);
 
-          <div className="bennerLeft bg-violet-400 w-[85%] sm:w-[50%] md:w-[49%] mb-4 sm:mb-0 rounded overflow-auto ">
-            <div className="bannerImage bg-red-500  ">
-              <Image src={buyImage} />
-            </div>
-          </div>
-          {/* left side of banner  */}
-
-          {/* right side of banner  */}
-
-          <div className="bannerRight bg-amber-300 w-[85%] sm:w-[49%] ">
-            {/* banner top  */}
-            <div className="bannerRightTop bg-orange-500 text-gray-500  mb-3 sm:mb-1 md:mb-3 text-base sm:text-sm md:text-base">
-              <h1>RENT A HOME</h1>
-            </div>
-            {/* banner top  */}
-
-            {/* banner heading  */}
-
-            <div className="bannerRightHeading bg-lime-300 w-[100%] md:w-[90%] lg:w-[75%] font-semibold text-3xl sm:text-xl md:text-2xl lg:text-3xl mb-5 sm:mb-2 md:mb-3 lg:mb-5 ">
-              <h1 className=" leading-[2.2rem] lg:leading-[2.8rem] ">
-                Rental Homes in Affordable Prices
-              </h1>
-            </div>
-
-            {/* banner heading  */}
-
-            {/* banner description  */}
-
-            <div className="bannerDescription bg-red-400 text-lg sm:text-base md:text-lg text-start w-[88%] sm:w-[98%] lg:w-[70%] mb-3 sm:mb-2 md:mb-3 ">
-              <h1>Explore apartments, villas and more and more</h1>
-            </div>
-
-            {/* banner description  */}
-
-            {/* banner button  */}
-            <div className="bannerButton">
-              <button className=" bg-gray-50 text-gray-800 text-base sm:text-sm lg:text-base py-3 sm:py-2 md:py-2.5 lg:py-3 px-6 sm:px-4 md:px-5 lg:px-6 rounded-md hover:bg-gray-700 hover:text-gray-50 font-semibold ">
-                Explore Renting
-              </button>
-            </div>
-            {/* banner button  */}
-          </div>
-
-          {/* right side of banner  */}
-        </div>
-      </div>
-    </>
-  );
-}
+export default Home;
