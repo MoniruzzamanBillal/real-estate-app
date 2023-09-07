@@ -9,10 +9,7 @@ import buyImage from "../assets/images/buy.jpg";
 import rentImage from "../assets/images/rent.jpg";
 import { baseUrl, fetchApi } from "@/utilities/fetchApi";
 import { useEffect, useState } from "react";
-
-// const propertyForSale =  fetchApi(
-//   `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
-// );
+import Nav from "./Component/Nav";
 
 const Home = () => {
   const [propertyForSale, setPropertyForSale] = useState([]);
@@ -35,8 +32,8 @@ const Home = () => {
       setPropertyForRent(rentPropertyData);
     };
 
-    fetchDataSale();
-    fetchDataRent();
+    // fetchDataSale();
+    // fetchDataRent();
   }, []);
 
   // console.log(propertyForSale);
@@ -44,6 +41,10 @@ const Home = () => {
 
   return (
     <>
+      <div className="navComponent ">
+        <Nav />
+      </div>
+
       {/* rent container starts  */}
       <div className="rentContainer mb-6 ">
         {/* banner section  */}
@@ -54,7 +55,7 @@ const Home = () => {
             title="  Rental Homes in Affordable Prices"
             description="Explore apartments, villas and more and more"
             buttonText="Explore Renting "
-            linkName="/search?purpose-for-rent"
+            linkName="/search?purpose=for-rent"
           />
         </div>
         {/* banner section ends  */}
@@ -94,7 +95,7 @@ const Home = () => {
             description="Explore apartments, villas and more
           and more"
             buttonText="Explore Buying "
-            linkName="/search?purpose-for-buy"
+            linkName="/ search?purpose=for-buy"
           />
         </div>
         {/* banner section ends  */}

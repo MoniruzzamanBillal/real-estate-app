@@ -23,15 +23,10 @@ const Properties = ({
     isVerified,
   },
 }) => {
-  // const Properties = ({ property }) => {
-  // console.log(coverPhoto.url);
-  // console.log(agency.name);
-  // console.log(agency);
-
   return (
     <>
       <Link href={`/property/${externalID}`}>
-        <div class="  bg-gray-200 border border-gray-200 rounded-lg  overflow-auto cursor-pointer hover:shadow-md transform hover:-translate-y-2 duration-200 ">
+        <div class="  bg-gray-200 border border-blue-200 rounded-lg  overflow-auto cursor-pointer hover:shadow-md transform hover:-translate-y-1 duration-200 ">
           {/* card top starts  */}
           <div className="cardTop  ">
             <div className="cardIMG bg-blue-600 h-[18rem]  ">
