@@ -62,8 +62,6 @@ const Home = () => {
         {/* rent content starts  */}
 
         <div className="rentComponent w-[90%] m-auto ">
-          <h1>rent component</h1>
-
           <Properties />
           {/* <div className="propertyContainer grid grid-cols-3 gap-x-3 gap-y-6 ">
             {propertyForRent.map((ele, ind) => (
