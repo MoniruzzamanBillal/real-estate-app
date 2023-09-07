@@ -40,7 +40,7 @@ const Home = () => {
   }, []);
 
   // console.log(propertyForSale);
-  console.log(propertyForRent);
+  // console.log(propertyForRent);
 
   return (
     <>
@@ -62,14 +62,18 @@ const Home = () => {
         {/* rent content starts  */}
 
         <div className="rentComponent w-[90%] m-auto ">
-          <Properties />
-          {/* <div className="propertyContainer grid grid-cols-3 gap-x-3 gap-y-6 ">
-            {propertyForRent.map((ele, ind) => (
+          {/* <Properties /> */}
+
+          {/*  */}
+          <div className="propertyContainer grid grid-cols-3 gap-x-3 gap-y-6 ">
+            {propertyForRent.map((property, ind) => (
               <>
-                <Properties />
+                <Properties property={property} />
               </>
             ))}
-          </div> */}
+          </div>
+
+          {/*  */}
         </div>
 
         {/* rent content ends  */}
@@ -79,8 +83,7 @@ const Home = () => {
       {/*  */}
 
       {/* buy container starts  */}
-
-      <div className="buyContainer  ">
+      <div className="buyContainer mb-6 ">
         {/* banner section  */}
         <div className="bannerComponent mb-4 ">
           <Banner
@@ -98,8 +101,17 @@ const Home = () => {
 
         {/* buy content starts  */}
 
-        <div className="buyComponent">
-          <h1>buy component</h1>
+        <div className="buyComponent w-[90%] m-auto ">
+          {/*  */}
+          <div className="propertyContainer grid grid-cols-3 gap-x-3 gap-y-6 ">
+            {propertyForSale.map((property, ind) => (
+              <>
+                <Properties property={property} />
+              </>
+            ))}
+          </div>
+
+          {/*  */}
         </div>
 
         {/* buy content ends  */}
