@@ -1,7 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-import buyImage from "../../assets/images/buy.jpg";
-
 const Banner = ({
   imageUrl,
   purpose,
@@ -17,7 +13,7 @@ const Banner = ({
 
         <div className="bennerLeft  w-[85%] sm:w-[50%] md:w-[49%] mb-4 sm:mb-0 rounded overflow-auto ">
           <div className="bannerImage   ">
-            <Image src={imageUrl} alt="banner left image " />
+            <img src={imageUrl} alt="banner left image " />
           </div>
         </div>
         {/* left side of banner  */}
@@ -50,7 +46,7 @@ const Banner = ({
           {/* banner button  */}
           <div className="bannerButton">
             <button className=" bg-gray-300  text-gray-800 text-base sm:text-sm lg:text-base py-3 sm:py-2 md:py-2.5 lg:py-3 px-6 sm:px-4 md:px-5 lg:px-6 rounded-md hover:bg-gray-700 hover:text-gray-50 hover:shadow-md active:scale-[.99] font-semibold ">
-              <Link href={linkName}> {buttonText} </Link>
+              <a href={linkName}> {buttonText} </a>
             </button>
           </div>
           {/* banner button  */}

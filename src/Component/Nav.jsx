@@ -53,6 +53,7 @@ const Nav = () => {
               <div className="navLogo flex self-center items-center ">
                 <div className="navLogoContainer w-[7%] ">
                   <img
+                    // src="../../assets/images/navLogo.png"
                     src="../../assets/images/navLogo.png"
                     className=" w-full h-full "
                     alt=""

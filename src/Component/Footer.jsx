@@ -1,11 +1,4 @@
-//
-
-import Link from "next/link";
-
 import { AiFillLinkedin, AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
-
-import footerIcon from "../../assets/images/navLogo.png";
-import Image from "next/image";
 
 const footerLeft = [
   {
@@ -35,10 +28,10 @@ const Footer = () => {
   return (
     <>
       <div className="footerContainer py-5 border-t border-gray-500  ">
-        <div className="footerWrapper m-auto flex justify-between items-center flex-col sm:flex-row  ">
+        <div className="footerWrapper m-auto w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] flex justify-center items-center flex-col sm:flex-row  ">
           {/* footer left  */}
-          <div className="footerLeftContainer  w-[85%] sm:w-[46%] mb-4 sm:mb-0 ">
-            <div className="footerLeftWrapper w-[85%] m-auto  flex flex-col justify-center items-center pb-5 sm:pb-8 ">
+          <div className="footerLeftContainer  w-[85%] sm:w-[50%] mb-4 sm:mb-0 ">
+            <div className="footerLeftWrapper   m-auto  flex flex-col justify-center items-center pb-5 sm:pb-8 ">
               {/*  */}
 
               <div className="footerTopHeading  mb-2 font-semibold text-lg  ">
@@ -48,6 +41,7 @@ const Footer = () => {
               {footerLeft.map((ele, ind) => (
                 <>
                   <div
+                    key={ind}
                     className={`footerContent  hover:underline cursor-pointer  ${
                       footerLeft.length - 1 === ind ? "mb-0" : "mb-2 "
                     } `}
@@ -64,8 +58,8 @@ const Footer = () => {
           {/*  */}
           {/* footer right  */}
 
-          <div className="footerRightContainer w-[85%] sm:w-[46%]">
-            <div className="footerRightWrapper w-[85%] m-auto flex flex-col justify-center items-center pb-4 sm:pb-8 ">
+          <div className="footerRightContainer  w-[85%] sm:w-[50%]">
+            <div className="footerRightWrapper  m-auto flex flex-col justify-center items-center pb-4 sm:pb-8 ">
               {/*  */}
               <div className="footerTopHeading  mb-2 font-semibold text-lg ">
                 <h1>Useful Links </h1>
@@ -74,6 +68,7 @@ const Footer = () => {
               {footerRight.map((ele, ind) => (
                 <>
                   <div
+                    key={ind}
                     className={`footerContent  hover:underline cursor-pointer  ${
                       footerRight.length - 1 === ind ? "mb-0" : "mb-2 "
                     } `}
@@ -102,15 +97,15 @@ const Footer = () => {
             {/*  */}
 
             <div className="footerBottomIcons w-[34%] sm:w-[26%] md:w-[18%] lg:w-[16%]  flex justify-between text-2xl sm:text-3xl ">
-              <Link href="/">
+              <a href="/">
                 <AiFillLinkedin />
-              </Link>
-              <Link href="/">
+              </a>
+              <a href="/">
                 <AiFillGithub />
-              </Link>
-              <Link href="/">
+              </a>
+              <a href="/">
                 <AiOutlineTwitter />
-              </Link>
+              </a>
             </div>
 
             {/*  */}
