@@ -10,6 +10,7 @@ import rentImage from "../assets/images/rent.jpg";
 import { baseUrl, fetchApi } from "@/utilities/fetchApi";
 import { useEffect, useState } from "react";
 import Nav from "./Component/Nav";
+import Footer from "./Component/Footer";
 
 const Home = () => {
   const [propertyForSale, setPropertyForSale] = useState([]);
@@ -61,10 +62,7 @@ const Home = () => {
         {/* banner section ends  */}
 
         {/* rent content starts  */}
-
         <div className="rentComponent w-[90%] m-auto ">
-          {/* <Properties /> */}
-
           {/*  */}
           <div className="propertyContainer grid grid-cols-3 gap-x-3 gap-y-6 ">
             {propertyForRent.map((property, ind) => (
@@ -73,7 +71,6 @@ const Home = () => {
               </>
             ))}
           </div>
-
           {/*  */}
         </div>
 
@@ -111,7 +108,6 @@ const Home = () => {
               </>
             ))}
           </div>
-
           {/*  */}
         </div>
 
@@ -119,6 +115,10 @@ const Home = () => {
       </div>
 
       {/* buy container ends */}
+
+      <div className="footerComponent">
+        <Footer />
+      </div>
     </>
   );
 };

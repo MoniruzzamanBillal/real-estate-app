@@ -36,7 +36,7 @@ const menuItems = [
 ];
 
 const Nav = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   const toggleMenu = () => {
     setToggle(!toggle);

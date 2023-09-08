@@ -12,7 +12,7 @@ const Banner = ({
 }) => (
   <>
     <div className="bannerContainer  ">
-      <div className="bannerWrapper  w-[70%] m-auto py-4 sm:py-8 flex justify-between items-center  flex-col sm:flex-row ">
+      <div className="bannerWrapper  w-[92%] sm:w-[85%] md:w-[75%] m-auto py-4 sm:py-8 flex justify-between items-center  flex-col sm:flex-row ">
         {/* left side of banner  */}
 
         <div className="bennerLeft  w-[85%] sm:w-[50%] md:w-[49%] mb-4 sm:mb-0 rounded overflow-auto ">
