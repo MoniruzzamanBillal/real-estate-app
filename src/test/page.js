@@ -92,7 +92,7 @@ const Home = () => {
             description="Explore apartments, villas and more
           and more"
             buttonText="Explore Buying "
-            linkName="/ search?purpose=for-buy"
+            linkName="/search?purpose=for-buy"
           />
         </div>
         {/* banner section ends  */}
