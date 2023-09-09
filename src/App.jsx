@@ -8,30 +8,36 @@ import Nav from "./Component/Nav";
 import Footer from "./Component/Footer";
 
 import { baseUrl, fetchApi } from "../utilities/fetchApi";
+import LoadingSkleton from "./Component/LoadingSkleton";
 
 function App() {
+  const [loadingSale, setLoadingSale] = useState(true);
+  const [loadingRent, setLoadingRent] = useState(true);
+
   const [propertyForSale, setPropertyForSale] = useState([]);
   const [propertyForRent, setPropertyForRent] = useState([]);
 
   useEffect(() => {
     const fetchDataSale = async () => {
+      setLoadingSale(true);
       const salePropertyData = await fetchApi(
         `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
       );
-
+      setLoadingSale(false);
       setPropertyForSale(salePropertyData);
     };
 
     const fetchDataRent = async () => {
+      setLoadingRent(true);
       const rentPropertyData = await fetchApi(
         `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
       );
-
+      setLoadingRent(false);
       setPropertyForRent(rentPropertyData);
     };
 
-    // fetchDataRent();
-    // fetchDataSale();
+    fetchDataRent();
+    fetchDataSale();
   }, []);
 
   // console.log(propertyForRent);
@@ -64,8 +70,28 @@ function App() {
 
         {/* rent content starts  */}
         <div className="rentComponent w-[90%] m-auto ">
+          {/* loading component starts  */}
+
+          <div
+            className={` m-auto ${
+              loadingRent ? "grid" : "hidden"
+            }  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-5`}
+          >
+            {Array.from({ length: 3 }).map((ele, index) => (
+              <div key={index}>
+                <LoadingSkleton />
+              </div>
+            ))}
+          </div>
+
+          {/* loading component ends */}
+
           {/*  */}
-          <div className="propertyContainer grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-x-4 gap-y-4 ">
+          <div
+            className={` propertyContainer ${
+              loadingRent ? "hidden" : "grid"
+            } grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-4 `}
+          >
             {propertyForRent.map((property, ind) => (
               <>
                 <Properties property={property} key={ind} />
@@ -86,7 +112,6 @@ function App() {
         {/* banner section  */}
         <div className="bannerComponent mb-4 ">
           <Banner
-            // imageUrl="../public/assets/images/buy.jpg"
             imageUrl="/images/buy.jpg"
             purpose="BUY A HOME"
             title="Find, Buy & Own
@@ -102,8 +127,28 @@ function App() {
         {/* buy content starts  */}
 
         <div className="buyComponent w-[90%] m-auto ">
+          {/* loading component starts  */}
+
+          <div
+            className={` m-auto ${
+              loadingSale ? "grid" : "hidden"
+            }  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-5`}
+          >
+            {Array.from({ length: 3 }).map((ele, index) => (
+              <div key={index}>
+                <LoadingSkleton />
+              </div>
+            ))}
+          </div>
+
+          {/* loading component ends */}
+
           {/*  */}
-          <div className="propertyContainer grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-x-4 gap-y-4  ">
+          <div
+            className={`propertyContainer ${
+              loadingSale ? "hidden" : "grid"
+            } grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-4`}
+          >
             {propertyForSale.map((property, ind) => (
               <>
                 <Properties property={property} key={ind} />
