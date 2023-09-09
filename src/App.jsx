@@ -9,8 +9,11 @@ import Footer from "./Component/Footer";
 
 import { baseUrl, fetchApi } from "../utilities/fetchApi";
 import LoadingSkleton from "./Component/LoadingSkleton";
+import { GlobalContext } from "./Context/GlobalContext";
 
 function App() {
+  const { count, AddCount, MultiplyCount } = GlobalContext();
+
   const [loadingSale, setLoadingSale] = useState(true);
   const [loadingRent, setLoadingRent] = useState(true);
 
@@ -36,8 +39,8 @@ function App() {
       setPropertyForRent(rentPropertyData);
     };
 
-    fetchDataRent();
-    fetchDataSale();
+    // fetchDataRent();
+    // fetchDataSale();
   }, []);
 
   // console.log(propertyForRent);
@@ -93,9 +96,7 @@ function App() {
             } grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-4 `}
           >
             {propertyForRent.map((property, ind) => (
-              <>
-                <Properties property={property} key={ind} />
-              </>
+              <Properties property={property} key={ind} />
             ))}
           </div>
           {/*  */}
@@ -150,9 +151,7 @@ function App() {
             } grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-4`}
           >
             {propertyForSale.map((property, ind) => (
-              <>
-                <Properties property={property} key={ind} />
-              </>
+              <Properties property={property} key={ind} />
             ))}
           </div>
           {/*  */}
