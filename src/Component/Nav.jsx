@@ -3,7 +3,7 @@ import { RiMenu3Fill } from "react-icons/ri";
 import { AiOutlineClose, AiOutlineUserDelete } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 import { FiKey } from "react-icons/fi";
-// import navLogo from "../../assets/images/navLogo.png";
+
 import { useState } from "react";
 
 // moile menu items
@@ -53,10 +53,9 @@ const Nav = () => {
               <div className="navLogo flex self-center items-center ">
                 <div className="navLogoContainer w-[7%] ">
                   <img
-                    // src="../../assets/images/navLogo.png"
-                    src="../../assets/images/navLogo.png"
+                    src="/images/navLogo.png"
                     className=" w-full h-full "
-                    alt=""
+                    alt="Nav logo"
                   />
                 </div>
 

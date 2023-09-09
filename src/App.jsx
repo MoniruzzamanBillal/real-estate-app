@@ -7,8 +7,6 @@ import Properties from "./Component/Properties";
 import Nav from "./Component/Nav";
 import Footer from "./Component/Footer";
 
-// import buyImage from "./assets/images/buy.jpg";
-// import rentImage from "./assets/images/rent.jpg";
 import { baseUrl, fetchApi } from "../utilities/fetchApi";
 
 function App() {
@@ -53,7 +51,8 @@ function App() {
         {/* banner section  */}
         <div className="bannerComponent mb-4 ">
           <Banner
-            imageUrl="../assets/images/rent.jpg"
+            // imageUrl="../public/assets/images/rent.jpg"
+            imageUrl="/images/rent.jpg"
             purpose="RENT A HOME"
             title="  Rental Homes in Affordable Prices"
             description="Explore apartments, villas and more and more"
@@ -87,7 +86,8 @@ function App() {
         {/* banner section  */}
         <div className="bannerComponent mb-4 ">
           <Banner
-            imageUrl="../assets/images/buy.jpg"
+            // imageUrl="../public/assets/images/buy.jpg"
+            imageUrl="/images/buy.jpg"
             purpose="BUY A HOME"
             title="Find, Buy & Own
           Your Dream Home!"

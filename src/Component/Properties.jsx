@@ -4,10 +4,12 @@ import { FaBed, FaBath } from "react-icons/fa";
 import { BiSolidGridAlt } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 
-import cardImg from "../../assets/images/card/rent-card.jpg";
-import cardLogo from "../../assets/images/card/rent-card logo.jpg";
-
-import blueTic from "../../assets/images/card/blueTic.svg";
+// import cardImg from "../../public/assets/images/card/rent-card.jpg";
+import cardImg from "/images/card/rent-card.jpg";
+// import cardLogo from "../../public/assets/images/card/rent-cardLogo.jpg";
+import cardLogo from "/images/card/rent-cardLogo.jpg";
+// import blueTic from "../../public/assets/images/card/blueTic.svg";
+import blueTic from "/images/card/blueTic.svg";
 
 const Properties = ({
   property: {
