@@ -31,7 +31,7 @@ const Properties = ({
         <div className="  bg-gray-200 border border-blue-200 rounded-lg  overflow-auto cursor-pointer hover:shadow-md transform hover:-translate-y-1 duration-200 w-[80%] sm:w-[100%] m-auto ">
           {/* card top starts  */}
           <div className="cardTop  ">
-            <div className="cardIMG bg-blue-600 h-[18rem]  ">
+            <div className="cardIMG  h-[18rem]  ">
               <img
                 src={coverPhoto ? coverPhoto?.url : cardImg}
                 alt=""
@@ -100,8 +100,8 @@ const Properties = ({
 
             {/* right side of card starts  */}
 
-            <div className="peopertyRight  w-[18%] ">
-              <div className="imgContainer w-[75%] m-auto  ">
+            <div className="peopertyRight  w-[18%] flex justify-end ">
+              <div className="imgContainer w-[75%]   ">
                 <img
                   src={agency ? agency?.logo?.url : ""}
                   width={100}

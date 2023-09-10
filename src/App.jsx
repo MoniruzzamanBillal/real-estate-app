@@ -12,33 +12,16 @@ import LoadingSkleton from "./Component/LoadingSkleton";
 import { GlobalContext } from "./Context/GlobalContext";
 
 function App() {
-  const { count, AddCount, MultiplyCount } = GlobalContext();
-
-  const [loadingSale, setLoadingSale] = useState(true);
-  const [loadingRent, setLoadingRent] = useState(true);
-
-  const [propertyForSale, setPropertyForSale] = useState([]);
-  const [propertyForRent, setPropertyForRent] = useState([]);
+  const {
+    loadingSale,
+    propertyForSale,
+    fetchDataSale,
+    loadingRent,
+    propertyForRent,
+    fetchDataRent,
+  } = GlobalContext();
 
   useEffect(() => {
-    const fetchDataSale = async () => {
-      setLoadingSale(true);
-      const salePropertyData = await fetchApi(
-        `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
-      );
-      setLoadingSale(false);
-      setPropertyForSale(salePropertyData);
-    };
-
-    const fetchDataRent = async () => {
-      setLoadingRent(true);
-      const rentPropertyData = await fetchApi(
-        `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
-      );
-      setLoadingRent(false);
-      setPropertyForRent(rentPropertyData);
-    };
-
     // fetchDataRent();
     // fetchDataSale();
   }, []);
@@ -60,7 +43,6 @@ function App() {
         {/* banner section  */}
         <div className="bannerComponent mb-4 ">
           <Banner
-            // imageUrl="../public/assets/images/rent.jpg"
             imageUrl="/images/rent.jpg"
             purpose="RENT A HOME"
             title="  Rental Homes in Affordable Prices"
