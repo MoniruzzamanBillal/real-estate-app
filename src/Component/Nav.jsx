@@ -5,6 +5,7 @@ import { BsSearch } from "react-icons/bs";
 import { FiKey } from "react-icons/fi";
 
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 // moile menu items
 
@@ -49,7 +50,7 @@ const Nav = () => {
         <div className="navWrapper   w-[95%] sm:w-[90%] md:w-[85%] m-auto flex justify-between items-center self-center ">
           {/* nav left  */}
           <div className="navLeft  ">
-            <a href="/">
+            <NavLink to="/">
               <div className="navLogo flex self-center items-center ">
                 <div className="navLogoContainer w-[7%] ">
                   <img
@@ -63,7 +64,7 @@ const Nav = () => {
                   Magic Properties
                 </h1>
               </div>
-            </a>
+            </NavLink>
           </div>
           {/* nav left ends  */}
 
@@ -87,22 +88,19 @@ const Nav = () => {
               }  bg-gray-50  transform -translate-x-1/2 -translate-y-1/2 top-[8.9rem] -right-[5.2rem] `}
             >
               {menuItems.map((ele, ind) => (
-                <a href={ele.href} key={ind}>
+                <NavLink to={ele.href} key={ind}>
                   <div
                     className={`mobileMenuContent bg-gray-50 hover:bg-gray-300 flex items-center self-center py-2 px-4 cursor-pointer ${
                       menuItems.length - 1 === ind ? "mb-0" : "mb-2"
                     } `}
                     onClick={() => toggleMenu()}
                   >
-                    <div className="menuIcon text-xl ">
-                      {/* <FcHome /> */}
-                      {ele.icon}
-                    </div>
+                    <div className="menuIcon text-xl ">{ele.icon}</div>
                     <div className="menuTitle pl-2.5 whitespace-nowrap ">
                       <p>{ele.title} </p>
                     </div>
                   </div>
-                </a>
+                </NavLink>
               ))}
             </div>
 
