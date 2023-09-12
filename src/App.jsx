@@ -11,6 +11,7 @@ import { baseUrl, fetchApi } from "../utilities/fetchApi";
 import LoadingSkleton from "./Component/LoadingSkleton";
 import { GlobalContext } from "./Context/GlobalContext";
 import { Route, Router, Routes } from "react-router-dom";
+import Search from "./Pages/Search";
 
 function App() {
   return (
@@ -20,11 +21,9 @@ function App() {
         <Nav />
       </div>
 
-      {/* <Home /> */}
-
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/footer" element={<Footer />} /> */}
+        <Route path="/search" element={<Search />} />
       </Routes>
 
       <div className="footerComponent">
