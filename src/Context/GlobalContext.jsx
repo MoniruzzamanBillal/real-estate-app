@@ -11,6 +11,9 @@ const AppProvider = ({ children }) => {
   const [propertyForSale, setPropertyForSale] = useState([]);
   const [propertyForRent, setPropertyForRent] = useState([]);
 
+  const [propertyAllSale, setPropertyAllSale] = useState([]);
+  const [propertyAllRent, setPropertyAllRent] = useState([]);
+
   // getting sale data from api
   const fetchDataSale = async () => {
     setLoadingSale(true);
@@ -31,6 +34,26 @@ const AppProvider = ({ children }) => {
     setPropertyForRent(rentPropertyData);
   };
 
+  // getting all sale data
+  const fetchSaleDataAll = async () => {
+    setLoadingSale(true);
+    const salePropertyData = await fetchApi(
+      `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale`
+    );
+    setLoadingSale(false);
+    setPropertyAllSale(salePropertyData);
+  };
+
+  // getting all rent data
+  const fetchRentDataAll = async () => {
+    setLoadingRent(true);
+    const rentPropertyData = await fetchApi(
+      `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent`
+    );
+    setLoadingRent(false);
+    setPropertyAllRent(rentPropertyData);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -40,6 +63,10 @@ const AppProvider = ({ children }) => {
         loadingRent,
         propertyForRent,
         fetchDataRent,
+        fetchSaleDataAll,
+        fetchRentDataAll,
+        propertyAllSale,
+        propertyAllRent,
       }}
     >
       {children}

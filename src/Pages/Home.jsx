@@ -44,8 +44,8 @@ const Home = () => {
 
         {/* rent content starts  */}
         <div className="rentComponent w-[90%] m-auto ">
+          {/*  */}
           {/* loading component starts  */}
-
           <div
             className={` m-auto ${
               loadingRent ? "grid" : "hidden"
